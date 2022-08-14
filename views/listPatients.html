@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>XYZ Clinic</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body style="background-color: aliceblue;">
+  <div class="header">
+    <img src="logo.png" alt="Invalid Page" style="margin-right:110%;" width="100" height="100">
+    <h1>XYZ Clinic</h1>
+    <p>Patient List</p>
+  </div>
+
+  <div class="content">
+    <a href="/">Home</a> &nbsp;
+    <a href="newDoctor">Add a New Doctor</a> &nbsp;
+    <a href="listDoctor">List all Doctors</a> &nbsp;
+    <a href="newPatient">Add a New Patient</a> &nbsp;
+    <a href="listPatients">List all Patients</a> &nbsp;
+    <a href="updateDoctor">Update Doctor Patients</a> &nbsp;
+    <a href="deletePatient">Remove a Patient</a> &nbsp;
+  </div>
+
+  <table id="books">
+    <tr>
+      <th>Full Name</th>
+      <th>Doctor First Name </th>
+      <th>Doctor last Name </th>
+      <th>Age</th>
+      <th>Date of Visit</th>
+      <th>Case Description</th>
+    </tr>
+
+
+    <% for (let i = 0; i < patientsDbtable.length; i++){%>
+    <tr>
+      <td><%= patientsDbtable[i].name%></td>
+      <td><%= patientsDbtable[i].doctor.name.firstName%></td>
+      <td><%= patientsDbtable[i].doctor.name.lastName%></td>
+      <td><%= patientsDbtable[i].age%></td>
+      <td><%= patientsDbtable[i].dateOfVisit%></td>
+      <td><%= patientsDbtable[i].caseDescription%></td>
+    </tr>
+    <% } %>
+  </table>
+
+</body>
+
+</html>
